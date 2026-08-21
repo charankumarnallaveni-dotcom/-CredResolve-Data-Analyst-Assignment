@@ -1,0 +1,9 @@
+test_name,status,details
+dim_accounts_pk_unique,PASS,Unique accounts: 30000/30000
+golden_payments_success_only,PASS,"Statuses present: <StringArray>
+['SUCCESS']
+Length: 1, dtype: str"
+golden_payments_no_dup_refs,PASS,Duplicate refs count: 0
+golden_payments_positive_amount,PASS,Min amount: 103.68
+fct_payments_referential_integrity,PASS,No orphan payment account_ids
+fct_calls_no_duplicates,PASS,Duplicate call_ids: 0

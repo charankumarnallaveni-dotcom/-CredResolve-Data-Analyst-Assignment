@@ -1,0 +1,12 @@
+metric,value,notes
+Identification Strategy,Difference-in-Differences (DiD) on Strategy v3 Campaign Shift,"Pre: Jan-Mar 2026, Post: Apr-Jul 2026"
+Treatment Group Size,9828 Accounts,Targeted under strategy_version v3
+Control Group Size,5809 Accounts,Retained under strategy_version v2
+Pre-Period Treatment Avg Recovery/Acc,INR 20209.67,Baseline Jan-Mar 2026
+Post-Period Treatment Avg Recovery/Acc,INR 17447.87,Post-change Apr-Jul 2026
+DiD Estimator (Treatment Effect),INR 3492.80 per account,Net impact attributable to strategy change
+95% Confidence Interval,"[INR 2668.62, INR 4316.98]",Statistically significant negative impact
+Observed Post-Period Recovery,"INR 192,380,552.50",Actual clean collections Apr-Jul 2026
+Counterfactual Post-Period Recovery,"INR 153,865,420.19",Estimated collections if strategy had NOT changed
+Net Incremental Recovery Loss,"INR 38,515,132.31",Revenue foregone due to digital-first strategy v3
+Percentage Difference,25.03%,Relative impact vs counterfactual baseline
