@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Collections & Capital Allocation Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #F8FAFC; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1E293B; }
+        .header-box { background: white; padding: 20px 30px; border-bottom: 1px solid #E2E8F0; margin-bottom: 25px; }
+        .title-text { font-weight: 800; font-size: 1.8rem; color: #0F172A; }
+        .sub-text { color: #64748B; font-size: 0.95rem; margin-top: 4px; }
+        .kpi-card { background: white; border: 1px solid #E2E8F0; border-radius: 10px; padding: 18px 15px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .kpi-val { font-size: 1.7rem; font-weight: 800; margin: 4px 0; }
+        .kpi-title { font-size: 0.75rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px; }
+        .kpi-sub { font-size: 0.75rem; color: #94A3B8; }
+        .chart-card { background: white; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .chart-title { font-weight: 700; font-size: 1.1rem; color: #0F172A; margin-bottom: 15px; }
+        .winner-card { background-color: #ECFDF5; border: 2px solid #059669; border-radius: 10px; padding: 20px; }
+        .table-custom th { background-color: #F1F5F9; font-size: 0.85rem; color: #475569; }
+        .table-custom td { font-size: 0.9rem; }
+        .badge-fact { background-color: #DCFCE7; color: #166534; font-weight: 700; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; }
+        .badge-evid { background-color: #DBEAFE; color: #1E40AF; font-weight: 700; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <div class="container-fluid">
+        <div class="title-text">C-Suite Executive Collections Audit & Capital Allocation Dashboard</div>
+        <div class="sub-text">Interactive GitHub Pages Web Interface | Target Claim Audit: "Recovery improved by 11% MoM"</div>
+    </div>
+</div>
+
+<div class="container-fluid px-4">
+
+    <!-- Executive Alert Box -->
+    <div class="alert alert-warning border-warning mb-4" role="alert">
+        <h5 class="alert-heading fw-bold mb-2">⚡ 60-Second CEO Executive Verdict</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <strong>1. Is 11% Real?</strong> <span class="text-danger fw-bold">NO (FALSE CLAIM)</span>. Cherry-picked March data. Actual trend is <strong>declining by -19.9%</strong>.
+            </div>
+            <div class="col-md-4">
+                <strong>2. Why Did It Happen?</strong> Raw data included <strong>₹575.8M failed payments</strong> & <strong>₹64.2M retries</strong> (+66.7% over-reporting).
+            </div>
+            <div class="col-md-4">
+                <strong>3. Where to Invest ₹10 Cr?</strong> <span class="text-success fw-bold">OPTION 4: TARGETING</span> (+68.5% ROI, 7.1m break-even, +₹168.5M rec).
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI Cards Row -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">Independent Rec Rate</div>
+                <div class="kpi-val text-success">7.22%</div>
+                <div class="kpi-sub">Clean Net Verified</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">Reported Rec Rate</div>
+                <div class="kpi-val text-danger">11.84%</div>
+                <div class="kpi-sub">Legacy Gross Raw</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">Gross Over-Reporting</div>
+                <div class="kpi-val text-warning">+66.7%</div>
+                <div class="kpi-sub">Raw Inflation Bias</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">Clean Recovered</div>
+                <div class="kpi-val text-dark">₹1.150 B</div>
+                <div class="kpi-sub">Total SUCCESS Net</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">Recovery / Account</div>
+                <div class="kpi-val text-secondary">₹25,948</div>
+                <div class="kpi-sub">Down from ₹31,522</div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="kpi-card">
+                <div class="kpi-title">PTP Kept Rate</div>
+                <div class="kpi-val text-primary">24.26%</div>
+                <div class="kpi-sub">Promises Kept %</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row 1 -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-card">
+                <div class="chart-title">A. Reported Gross vs Independent Clean Recovery Trend</div>
+                <div id="chartTrend" style="height: 350px;"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-card">
+                <div class="chart-title">B. Recovery Truth Bridge (Raw ➔ Golden Reconciliation)</div>
+                <div id="chartWaterfall" style="height: 350px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts & Scorecard Row 2 -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-card">
+                <div class="chart-title">C. Why Did Performance Change? (Top Driver Scorecard)</div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-custom align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Driver Name</th>
+                                <th>Observed Change & Impact</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td><strong>Portfolio DPD Mix Shift</strong></td>
+                                <td>Targeted queue shifted >60 DPD (18% ➔ 32%). Yield dropped -14.3%.</td>
+                                <td><span class="badge-fact">FACT</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td><strong>Failed/Pending Payment Ingestion</strong></td>
+                                <td>Logged FAILED, PENDING, REVERSED payments (+₹575.8M raw inflation).</td>
+                                <td><span class="badge-fact">FACT</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td><strong>Duplicate Payment Retries</strong></td>
+                                <td>4,678 duplicate reference retries counted as unique (+₹64.2M raw inflation).</td>
+                                <td><span class="badge-fact">FACT</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4</strong></td>
+                                <td><strong>March Fiscal Rebound</strong></td>
+                                <td>March experienced transient +12.23% bump before April cliff drop.</td>
+                                <td><span class="badge-fact">FACT</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5</strong></td>
+                                <td><strong>Channel Misattribution</strong></td>
+                                <td>38.4% of digital recoveries had human calls within 5 days.</td>
+                                <td><span class="badge-evid">STRONG EVID</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="chart-card">
+                <div class="chart-title">D. ₹10 Crore Capital Allocation Decision Matrix</div>
+                <div id="chartROI" style="height: 200px;"></div>
+                <div class="winner-card mt-3">
+                    <h6 class="fw-bold text-success mb-2">🏆 RECOMMENDED WINNER: OPTION 4 — BETTER BORROWER TARGETING</h6>
+                    <div class="row text-dark small fw-semibold">
+                        <div class="col-6">• 12M Incremental Recovery: <strong>INR 168.48 Million</strong></div>
+                        <div class="col-6">• 12M Base Net ROI: <strong>+68.5%</strong> (Upside: +110.6%)</div>
+                        <div class="col-6">• Break-Even Period: <strong>7.1 Months</strong></div>
+                        <div class="col-6">• Downside Scenario ROI: <strong>+15.2%</strong> (Only Positive)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-secondary small py-4">
+        Production Analytics Audit System | 46,253 DQ Actions Logged | 100% Automated DQ Tests PASSING | Built for CredResolve C-Suite Leadership
+    </div>
+
+</div>
+
+<script>
+var trace1 = {
+    x: ["2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08"],
+    y: [271.1180663, 245.18361926, 275.1730047, 259.14256901, 267.83332853, 255.64709655000001, 270.78797570999996, 72.37295709],
+    type: 'scatter',
+    mode: 'lines+markers',
+    name: 'Reported Gross (Legacy)',
+    line: { color: '#DC2626', width: 2.5, dash: 'dash' }
+};
+
+var trace2 = {
+    x: ["2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08"],
+    y: [180.68464108, 159.43525126, 171.92961753, 153.85749851, 154.340691, 145.39552215999998, 147.02157008, 37.24438855],
+    type: 'scatter',
+    mode: 'lines+markers',
+    name: 'Independent Clean (Golden)',
+    line: { color: '#059669', width: 3.5 }
+};
+
+var layoutTrend = {
+    margin: { l: 40, r: 20, t: 10, b: 40 },
+    yaxis: { title: 'Recovery (INR Millions)' },
+    xaxis: { title: 'Month' },
+    legend: { orientation: 'h', y: 1.1, x: 0.5, xanchor: 'center' },
+    annotations: [{
+        x: '2026-04',
+        y: 153.8,
+        text: 'April Cliff Drop (-9.2%)',
+        showarrow: true,
+        arrowhead: 2,
+        ax: 0,
+        ay: -40,
+        arrowcolor: '#DC2626',
+        font: { color: '#DC2626', size: 10, family: 'Arial, sans-serif' }
+    }]
+};
+
+Plotly.newPlot('chartTrend', [trace1, trace2], layoutTrend, {responsive: true});
+
+var traceWaterfall = {
+    type: "waterfall",
+    orientation: "v",
+    x: ["Reported Gross", "Failed/Pending Payments", "Duplicate Retries", "Independent Clean"],
+    textposition: "outside",
+    text: ["₹1917.3M", "-₹575.8M", "-₹64.2M", "₹1149.9M"],
+    y: [1917.2586171500002, 575.77269082, 64.1600732, 1149.9091801700001],
+    connector: { line: { color: "rgb(63, 63, 63)" } },
+    decreasing: { marker: { color: "#DC2626" } },
+    totals: { marker: { color: "#059669" } }
+};
+
+var layoutWaterfall = {
+    margin: { l: 40, r: 20, t: 10, b: 40 },
+    yaxis: { title: 'Capital (INR Millions)' }
+};
+
+Plotly.newPlot('chartWaterfall', [traceWaterfall], layoutWaterfall, {responsive: true});
+
+var traceROI = {
+    x: [-5.0, 12.0, 28.0, 35.0, 42.0, 68.48],
+    y: ["Field Operations", "More Collection Agents", "WhatsApp / Digital Engagement", "Better Telephony Infrastructure", "AI Voice Automation", "Better Borrower Targeting"],
+    type: 'bar',
+    orientation: 'h',
+    text: ["-5.0%", "12.0%", "28.0%", "35.0%", "42.0%", "68.5%"],
+    textposition: 'outside',
+    marker: {
+        color: ["#94A3B8", "#94A3B8", "#94A3B8", "#94A3B8", "#94A3B8", "#059669"]
+    }
+};
+
+var layoutROI = {
+    margin: { l: 140, r: 40, t: 10, b: 30 },
+    xaxis: { title: '12-Month Base ROI (%)' }
+};
+
+Plotly.newPlot('chartROI', [traceROI], layoutROI, {responsive: true});
+</script>
+
+</body>
+</html>
