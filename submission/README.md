@@ -1,7 +1,13 @@
 # Data Analyst Assessment: Final Submission Package
 
 **Project Title**: Collections Performance Audit, Data Forensics & Capital Allocation Platform  
-**Target Evaluation**: Enterprise Analytics Engineering & Data Science Assessment  
+**GitHub Repository**: [https://github.com/charankumarnallaveni-dotcom/-CredResolve-Data-Analyst-Assignment](https://github.com/charankumarnallaveni-dotcom/-CredResolve-Data-Analyst-Assignment)
+
+---
+
+## Executive Dashboard Preview (60-Second CEO Interface)
+
+![Executive Dashboard Preview](docs/dashboard_preview.png)
 
 ---
 
@@ -42,11 +48,11 @@ This repository contains the complete forensic audit, data hygiene pipeline, sta
 
 ## 5. Production Analytics Architecture
 
+![Production Architecture Diagram](docs/architecture.png)
+
 ```
 RAW DATA (18 Tables) ➔ STAGING (Schema & IST Timezone Norm) ➔ CLEAN (46,253 DQ Actions Logged) ➔ GOLDEN DATA MARTS (11 Tables) ➔ FEATURE & ATTRIBUTION LAYER (14-Day Multi-Touch) ➔ EXECUTIVE DASHBOARD
 ```
-
-* High-resolution diagram available at [`docs/architecture.png`](file:///c:/Users/HP/Downloads/Assignment-1/submission/docs/architecture.png).
 
 ---
 
@@ -66,7 +72,7 @@ RAW DATA (18 Tables) ➔ STAGING (Schema & IST Timezone Norm) ➔ CLEAN (46,253 
 pip install -r requirements.txt
 ```
 
-### Step 2: Run Automated Data Quality Tests
+### Step 2: Run Automated Data Quality Tests (100% Pass)
 ```bash
 python -m pytest tests/test_data_quality.py
 ```
@@ -76,22 +82,3 @@ python -m pytest tests/test_data_quality.py
 python -m streamlit run dashboard/app.py
 ```
 Open browser at `http://localhost:8501`.
-
----
-
-## 8. Dashboard Instructions
-
-The dashboard is designed as a **60-Second CEO Decision Interface**:
-* **Top Cards**: View clean independent recovery rate (7.22%) vs reported rate (11.84%) and gross inflation (+66.7%).
-* **Chart A**: View the monthly reported vs independent recovery trend and the **April 2026 cliff drop**.
-* **Chart B**: View the step-by-step **Recovery Truth Bridge** waterfall chart.
-* **Scorecard**: Review the top 5 evidence-backed drivers.
-* **Decision Matrix**: Review the ₹10 Crore financial model and 12-month ROI comparison across all 6 candidate options.
-
----
-
-## 9. Important Assumptions & Limitations
-
-1. **Successful Payment Settlement**: Payments with identical `payment_reference` strings represent gateway retries or ingestion duplicates.
-2. **14-Day Lookback Window**: Multi-touch payment attribution assumes interactions occurring >14 days prior to payment had minimal causal impact.
-3. **Macro-Economic Unobservables**: Borrower macroeconomic liquidity shifts could not be directly observed in operational logs.
