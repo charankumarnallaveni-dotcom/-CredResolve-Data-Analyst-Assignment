@@ -12,7 +12,7 @@
 The reported business claim — **"Recovery has improved by 11% month-on-month"** — is **UNSUPPORTED BY EMPIRICAL DATA AND FALSE AS AN ONGOING TREND**.
 
 Our forensic audit of the collections data across 30,000 accounts and 18 systems reveals that:
-1. **The 11% figure represents a single cherry-picked month (March 2026)**, where raw recovery jumped by +12.23% before resuming a downward trend. Month-on-month growth was negative in 4 out of 6 full months.
+1. **The 11% figure represents a single cherry-picked month (March 2026)**, where raw recovery jumped by +12.23% before resuming a downward trend. Month-on-month growth was negative in 6 out of 6 complete monthly transitions for Clean Recovery Rate.
 2. **Actual operational recovery is DECLINING by -19.9%** across the analysis period. Verified clean recovery rate dropped steadily from **9.01% in Jan 2026 to 7.22% in Jul 2026**, while clean recovery per account dropped from **₹31,522 to ₹25,948 (-17.7%)**.
 3. Legacy reporting was distorted by **₹575.8 Million in FAILED/PENDING payment attempts** and **₹64.2 Million in duplicate payment reference retries**, creating a **+66.7% gross inflation bias**.
 

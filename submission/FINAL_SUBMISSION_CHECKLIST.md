@@ -1,7 +1,7 @@
 # Final Submission Verification Checklist
 
 **Target Evaluation Package**: `submission/`  
-**Data Scope**: 12-Month Collections Dataset (30,000 Accounts, 18 Systems)  
+**Data Scope**: 8-Month Evaluation Window (7 Complete Months: Jan–Jul 2026 + Partial Aug 2026) (30,000 Accounts, 18 Systems)  
 **Execution Timestamp**: 2026-08-21  
 
 ---

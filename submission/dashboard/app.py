@@ -50,7 +50,7 @@ st.markdown('<div class="sub-title">60-Second CEO Decision Interface | Target Cl
 
 # Sidebar Filters
 st.sidebar.header("Executive Filters")
-sel_month = st.sidebar.selectbox("Select Time Horizon", ["Full 12-Month Period (Jan-Aug 2026)"] + list(df_perf["month"].unique()))
+sel_month = st.sidebar.selectbox("Select Time Horizon", ["Full 8-Month Window (7 Complete Months + Partial Aug) (Jan-Aug 2026)"] + list(df_perf["month"].unique()))
 sel_portfolio = st.sidebar.multiselect("Select Loan Product", ["AUTO", "BNPL", "CONSUMER", "CREDIT_CARD", "PERSONAL"], default=["AUTO", "BNPL", "CONSUMER", "CREDIT_CARD", "PERSONAL"])
 sel_dpd = st.sidebar.multiselect("Select DPD Risk Bucket", ["1-30 DPD", "31-60 DPD", "61-90 DPD", "90+ DPD"], default=["1-30 DPD", "31-60 DPD", "61-90 DPD", "90+ DPD"])
 

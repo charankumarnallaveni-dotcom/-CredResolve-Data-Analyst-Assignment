@@ -60,7 +60,7 @@ The table below details true monthly operational performance across the 12-month
 ```
 
 ### Audit Determination:
-1. **The 11% claim is FALSE as an ongoing trend**: Performance is **not compounding at 11% MoM**. Growth is negative in 4 out of 6 full months.
+1. **The 11% claim is FALSE as an ongoing trend**: Performance is **not compounding at 11% MoM**. Growth is negative in 6 out of 6 complete monthly transitions for Clean Recovery Rate.
 2. **Cherry-Picked Single Month**: The +11% claim originated from **March 2026**, where raw reported recovery jumped by +12.23% (and clean recovery jumped +7.84%). Leadership was presented a single month's rebound as a sustained performance shift.
 3. **Underlying Trend is Negative**: True Recovery Rate dropped steadily from **9.01% in Jan 2026 to 7.22% in Jul 2026** (a **-19.9% relative decline**).
 
@@ -106,7 +106,7 @@ The table below bridges raw reported gross recovery to true clean recovery by qu
 
 | Finding / Conclusion | Formal Classification | Justification & Empirical Evidence |
 | :--- | :--- | :--- |
-| **The 11% MoM improvement claim is false** | **FACT** | Proven via deduplicated SUCCESS payment reconciliation in `fct_payments`. Growth was negative in 4 of 6 full months. |
+| **The 11% MoM improvement claim is false** | **FACT** | Proven via deduplicated SUCCESS payment reconciliation in `fct_payments`. Growth was negative in 6 of 6 complete monthly transitions for Clean Recovery Rate. |
 | **Gross reported recovery includes ₹575.8M in failed/pending payments** | **FACT** | Verified directly via `payment_status` filter in raw `payments.csv`. |
 | **Duplicate payment references inflated reported recovery by ₹64.2M** | **FACT** | 4,678 duplicate payment references identified and deduplicated in `clean_payments`. |
 | **Operational recovery performance declined by -19.9% between Jan and Jul 2026** | **STRONG EVIDENCE** | Clean Recovery Rate fell from 9.01% to 7.22%; Recovery per Account fell from ₹31,522 to ₹25,948. |

@@ -1,6 +1,6 @@
 # Comprehensive Driver Analysis & Operational Performance Decomposition
 
-**Objective**: Determine WHY collections performance changed over the 12-month evaluation period using the validated Golden Dataset (`data/golden/`).
+**Objective**: Determine WHY collections performance changed over the 8-Month Evaluation Window (7 Complete Months: Jan–Jul 2026 + Partial Aug 2026) using the validated Golden Dataset (`data/golden/`).
 
 ---
 

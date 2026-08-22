@@ -26,7 +26,7 @@ The executive leadership team was skeptical. This repository contains the comple
 
 ## 2. Key Findings & Executive Summary
 
-* **11% Claim Refuted (FALSE NARRATIVE)**: Recovery is **NOT** compounding at +11% MoM. Month-on-month growth was negative in 4 out of 6 full months. The 11% figure represented a single cherry-picked month (March 2026 at +12.23% gross).
+* **11% Claim Refuted (FALSE NARRATIVE)**: Recovery is **NOT** compounding at +11% MoM. Month-on-month growth was negative in 6 out of 6 complete monthly transitions for Clean Recovery Rate. The 11% figure represented a single cherry-picked month (March 2026 at +12.23% gross).
 * **Operational Performance is Declining (-19.9% Net Drop)**: Verified clean recovery rate dropped from **9.01% in Jan 2026 to 7.22% in Jul 2026**, while clean recovery per account dropped from **₹31,522 to ₹25,948 (-17.7%)**.
 * **Massive Over-Reporting Bias (+66.7% Inflation)**: Legacy gross reporting included **₹575.8 Million in FAILED/PENDING payment attempts** and **₹64.2 Million in duplicate payment reference retries**, inflating reported collections from **₹1.150 Billion (clean) to ₹1.917 Billion (raw)**.
 * **April 2026 Performance Cliff**: Performance dropped sharply in April (-9.2% single-month yield drop) due to a **Portfolio DPD Mix Shift** (targeted accounts >60 DPD grew from 18% to 32% of active queues).
