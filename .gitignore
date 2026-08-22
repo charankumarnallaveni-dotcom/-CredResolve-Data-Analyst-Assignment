@@ -4,9 +4,13 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Data zips & raw unextracted folders (if oversized)
+# Large Data zips & raw/clean duplicates
 collections_30k_dataset.zip
 raw_data/
+CredResolve_Data_Analyst_Assignment_Submission.zip
+submission/data/raw/
+submission/data/clean/
+submission/data/staging/
 
 # IDE / OS
 .vscode/

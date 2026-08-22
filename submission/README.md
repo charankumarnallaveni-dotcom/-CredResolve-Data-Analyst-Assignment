@@ -1,6 +1,7 @@
-# Data Analyst Assessment: Final Submission Package
+# Data Analyst Assessment: Collections Audit, Data Forensics & Production Analytics Platform
 
-**Project Title**: Collections Performance Audit, Data Forensics & Capital Allocation Platform  
+An enterprise-grade data audit, analytics engineering pipeline, statistical investigation, and executive decision system built on 12 months of collections data (30,000 accounts, 18 raw systems).
+
 **GitHub Repository**: [https://github.com/charankumarnallaveni-dotcom/-CredResolve-Data-Analyst-Assignment](https://github.com/charankumarnallaveni-dotcom/-CredResolve-Data-Analyst-Assignment)
 
 ---
@@ -11,30 +12,28 @@
 
 ---
 
-## 1. Assessment Objective
+## 1. Project Objective & Core Business Questions
 
-The executive leadership team was skeptical of reported collections performance: **"Recovery has improved by 11% month-on-month."**  
-This repository contains the complete forensic audit, data hygiene pipeline, statistical investigation, Difference-in-Differences counterfactual model, and capital allocation decision framework built on 12 months of collections data (30,000 accounts, 18 raw systems).
+The business currently reports: **"Recovery has improved by 11% month-on-month."**  
+The executive leadership team was skeptical. This repository contains the complete forensic investigation, data hygiene pipeline, statistical modeling, and capital allocation framework that answers four core questions:
+
+1. **What happened?**: Reconstructed actual business performance over 12 months.
+2. **Why did it happen?**: Identified operational drivers across 13 dimensions.
+3. **Is the 11% improvement real?**: Independently tested the business claim against bank-settled collections data.
+4. **Where to invest ₹10 Crore?**: Evaluated 6 investment options using financial models, scenario analysis, and counterfactual DiD estimation.
 
 ---
 
-## 2. Key Business Finding & 11% Claim Conclusion
+## 2. Key Findings & Executive Summary
 
 * **11% Claim Refuted (FALSE NARRATIVE)**: Recovery is **NOT** compounding at +11% MoM. Month-on-month growth was negative in 4 out of 6 full months. The 11% figure represented a single cherry-picked month (March 2026 at +12.23% gross).
-* **Operational Performance is Declining (-19.9% Net Drop)**: Verified clean recovery rate dropped steadily from **9.01% in Jan 2026 to 7.22% in Jul 2026**, while clean recovery per account dropped from **₹31,522 to ₹25,948 (-17.7%)**.
-* **Gross Over-Reporting Bias (+66.7% Inflation)**: Legacy gross reporting included **₹575.8 Million in FAILED/PENDING payment attempts** and **₹64.2 Million in duplicate payment reference retries**, inflating reported collections from **₹1.150 Billion (clean) to ₹1.917 Billion (raw)**.
+* **Operational Performance is Declining (-19.9% Net Drop)**: Verified clean recovery rate dropped from **9.01% in Jan 2026 to 7.22% in Jul 2026**, while clean recovery per account dropped from **₹31,522 to ₹25,948 (-17.7%)**.
+* **Massive Over-Reporting Bias (+66.7% Inflation)**: Legacy gross reporting included **₹575.8 Million in FAILED/PENDING payment attempts** and **₹64.2 Million in duplicate payment reference retries**, inflating reported collections from **₹1.150 Billion (clean) to ₹1.917 Billion (raw)**.
+* **April 2026 Performance Cliff**: Performance dropped sharply in April (-9.2% single-month yield drop) due to a **Portfolio DPD Mix Shift** (targeted accounts >60 DPD grew from 18% to 32% of active queues).
 
 ---
 
-## 3. Key Performance Drivers
-
-1. **Portfolio DPD Mix Shift (FACT - 55% of Net Drop)**: Targeted account queues shifted toward >60 DPD accounts, causing a **-14.3% drop in recovery yield per account**.
-2. **Failed & Duplicate Payment Ingestion (FACT - 100% of Inflation)**: Gateway retries and uncollected payment attempts were double-counted in raw reporting.
-3. **Digital Strategy Transition (v3) (STRONG EVIDENCE - 25% of Net Drop)**: Introduced in April 2026, strategy v3 prioritized automated digital SMS/WhatsApp messages over early human voice agent calls.
-
----
-
-## 4. ₹10 Crore Capital Allocation Recommendation
+## 3. Final ₹10 Crore Investment Recommendation
 
 > **RECOMMENDED OPTION**: **OPTION 4 — BETTER BORROWER TARGETING**
 
@@ -46,7 +45,7 @@ This repository contains the complete forensic audit, data hygiene pipeline, sta
 
 ---
 
-## 5. Production Analytics Architecture
+## 4. Production Analytics Architecture
 
 ![Production Architecture Diagram](docs/architecture.png)
 
@@ -56,29 +55,66 @@ RAW DATA (18 Tables) ➔ STAGING (Schema & IST Timezone Norm) ➔ CLEAN (46,253 
 
 ---
 
-## 6. Technologies Used
+## 5. Final Project Folder Structure
 
-* **Language & Core**: Python 3.12, ANSI SQL
-* **Data Processing**: Pandas, NumPy, Bisect (Vectorized attribution)
-* **Visualization & Web App**: Streamlit 1.62, Plotly Express 6.9, Matplotlib 3.11
-* **Quality Control & Testing**: PyTest 7.4
+```
+Assignment-1/
+│
+├── README.md                       # Master Project README & Visual Overview
+├── requirements.txt                # Python environment dependencies
+│
+├── submission/                     # Isolated Final Submission Package
+│   ├── README.md                   # Submission Overview & Reviewer Guide
+│   ├── FINAL_SUBMISSION_CHECKLIST.md # Requirement Verification Checklist
+│   ├── data/golden/                # 15 Clean Data Mart CSVs
+│   ├── sql/                        # 8 Production SQL Scripts
+│   ├── notebooks/                  # 5 Executable Jupyter Notebooks
+│   ├── reports/                    # 8 Technical Audit Reports
+│   ├── dashboard/app.py            # Streamlit Interactive Web Dashboard
+│   ├── docs/                       # Specifications & Preview PNGs
+│   └── tests/                      # PyTest Automated Quality Contracts
+│
+├── data/                           # Production Data Layers (raw, staging, clean, golden)
+├── sql/                            # Production SQL Repository (01 to 08)
+├── notebooks/                      # Executable Python Notebooks (01 to 05)
+├── reports/                        # Executive Briefings & Audit Reports
+├── dashboard/                      # Production C-Suite Dashboard
+├── docs/                           # Governance & Architecture Specs
+└── tests/                          # Automated Data Quality Test Suite
+```
 
 ---
 
-## 7. How to Run & Reproduce
+## 6. How to Run & Reproduce
 
 ### Step 1: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 2: Run Automated Data Quality Tests (100% Pass)
+### Step 2: Run Data Pipeline (RAW ➔ STAGING ➔ CLEAN ➔ GOLDEN)
+```bash
+python scratch/build_pipeline_v5.py
+```
+
+### Step 3: Run Automated Data Quality Tests (100% Pass)
 ```bash
 python -m pytest tests/test_data_quality.py
 ```
 
-### Step 3: Launch Interactive Executive Dashboard
+### Step 4: Launch the Interactive Executive Dashboard
 ```bash
 python -m streamlit run dashboard/app.py
 ```
 Open browser at `http://localhost:8501`.
+
+---
+
+## 7. Deliverables & Documentation Index
+
+1. **Executive Memo**: [`reports/executive_memo.md`](file:///c:/Users/HP/Downloads/Assignment-1/reports/executive_memo.md)
+2. **Metric Dictionary**: [`docs/metric_dictionary.md`](file:///c:/Users/HP/Downloads/Assignment-1/docs/metric_dictionary.md)
+3. **Architecture Specification**: [`docs/architecture.md`](file:///c:/Users/HP/Downloads/Assignment-1/docs/architecture.md)
+4. **Reproducibility Guide**: [`docs/reproducibility.md`](file:///c:/Users/HP/Downloads/Assignment-1/docs/reproducibility.md)
+5. **Assessment Checklist**: [`docs/assessment_checklist.md`](file:///c:/Users/HP/Downloads/Assignment-1/docs/assessment_checklist.md)
+6. **Final Assessment Audit**: [`docs/final_assessment_audit.md`](file:///c:/Users/HP/Downloads/Assignment-1/docs/final_assessment_audit.md)

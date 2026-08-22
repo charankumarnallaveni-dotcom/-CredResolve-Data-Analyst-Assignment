@@ -1,0 +1,11 @@
+{
+  "total_payment_records_before": 25500,
+  "total_payment_records_after": 15350,
+  "total_recovered_amount_before_inr": 1917258617.15,
+  "total_recovered_amount_after_inr": 1149909180.1699998,
+  "recovery_per_account_before_inr": 63908.62057166667,
+  "recovery_per_account_after_inr": 38330.30600566666,
+  "ptp_rate_before_pct": 8.571428571428571,
+  "ptp_rate_after_pct": 8.7,
+  "total_dq_actions_logged": 46253
+}

@@ -1,0 +1,53 @@
+
+DATA ANALYST ASSESSMENT SUBMISSION - CREDRESOLVE
+Candidate: Charan Kumar Nallaveni
+
+1. SUBMISSION LINKS
+
+• GitHub Repository (Code, SQL, Notebooks, Reports, Pipeline & Data Marts):
+  https://github.com/charankumarnallaveni-dotcom/-CredResolve-Data-Analyst-Assignment
+
+• Live Executive Dashboard (Interactive GitHub Pages Web App):
+  https://charankumarnallaveni-dotcom.github.io/-CredResolve-Data-Analyst-Assignment/
+
+
+2. EXECUTIVE AUDIT SUMMARY & ANSWERS TO MISSION QUESTIONS
+
+Q1: Is the reported 11% recovery improvement real?
+ANSWER: NO (FALSE NARRATIVE).
+• The 11% figure represented a single cherry-picked month (March 2026 at +12.23% gross).
+• Actual clean recovery performance is DECLINING by -19.9% (Clean Recovery Rate fell from 9.01% in Jan to 7.22% in Jul; recovery per account fell from ₹31,522 to ₹25,948).
+• Legacy gross reporting included ₹575.8M in FAILED/PENDING payment attempts and ₹64.2M in duplicate transaction retries, creating a +66.7% gross inflation bias (₹1.917B raw vs ₹1.150B clean).
+
+Q2: What caused the performance change?
+ANSWER: PORTFOLIO DPD MIX SHIFT (55% OF NET DROP).
+• Performance dropped sharply in April 2026 (-9.2% single-month cliff drop) because daily targeting expanded into higher DPD cohorts (>60 DPD targeted accounts grew from 18% to 32% of active queues).
+• Transition to digital campaign strategy v3 reduced early human voice agent calls.
+
+Q3: Where should leadership invest ₹10 Crore?
+ANSWER: OPTION 4 — BETTER BORROWER TARGETING (RECOMMENDED WINNER).
+• Expected 12-Month Net Incremental Recovery: ₹168,480,000 (INR 168.48 Million)
+• Expected 12-Month Base Net ROI: +68.5% (Upside Case: +110.6%)
+• Break-Even Period: 7.1 Months (Fastest)
+• Downside Scenario ROI: +15.2% (ONLY candidate option with positive downside ROI)
+• Methodological Basis: Difference-in-Differences (DiD) quasi-experimental model (p < 0.001)
+
+
+3. DELIVERABLES INCLUDED IN REPOSITORY
+
+1. SQL Repository (sql/): 8 production SQL scripts (01_staging.sql to 08_investment_analysis.sql)
+2. Analysis Notebooks (notebooks/): 5 executable Jupyter notebooks (01 to 05)
+3. Golden Dataset (data/golden/): 11 clean analytical data marts + 4 modeling tables
+4. Data Quality Report (reports/golden_dataset_report.md): Full audit trail of 46,253 DQ actions
+5. Executive Dashboard (dashboard/app.py & index.html): 1-Screen 60-Second CEO Interface
+6. Executive Memo (reports/executive_memo.md): 2-Page C-Suite Decision Briefing
+7. Architecture Diagram & Spec (docs/architecture.png & docs/architecture.md): Production pipeline spec
+8. Automated Quality Test Suite (tests/test_data_quality.py): 100% PyTest PASS Rate (5/5 passed)
+
+
+4. REPRODUCIBILITY COMMANDS
+
+pip install -r requirements.txt
+python scratch/build_pipeline_v5.py
+python -m pytest tests/test_data_quality.py
+python -m streamlit run dashboard/app.py
