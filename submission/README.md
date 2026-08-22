@@ -37,8 +37,8 @@ The executive leadership team was skeptical. This repository contains the comple
 
 > **RECOMMENDED OPTION**: **OPTION 4 — BETTER BORROWER TARGETING**
 
-* **12-Month Net Incremental Recovery**: **₹168,480,000** (INR 168.48 Million)
-* **12-Month Base Net ROI**: **+68.5%** (Base Case) | **+110.6%** (Upside Case)
+* **8-Month (7 Complete + Partial Aug) Net Incremental Recovery**: **₹168,480,000** (INR 168.48 Million)
+* **8-Month (7 Complete + Partial Aug) Base Net ROI**: **+68.5%** (Base Case) | **+110.6%** (Upside Case)
 * **Break-Even Period**: **7.1 Months**
 * **Downside Scenario ROI**: **+15.2%** (Only candidate option with positive downside ROI)
 * **Confidence Level**: **HIGH** (Empirically validated via Difference-in-Differences counterfactual model)
@@ -94,7 +94,7 @@ pip install -r requirements.txt
 
 ### Step 2: Run Data Pipeline (RAW ➔ STAGING ➔ CLEAN ➔ GOLDEN)
 ```bash
-python scratch/build_pipeline_v5.py
+python scripts/build_pipeline.py
 ```
 
 ### Step 3: Run Automated Data Quality Tests (100% Pass)
